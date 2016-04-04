@@ -1,0 +1,35 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+non-option argument: /mnt/lustre/
+Began: Sun Apr  3 23:04:31 2016
+Command line used: ior -s 100 -t 1G -b 2G /mnt/lustre/
+Machine: Linux fast5
+
+Test 0 started: Sun Apr  3 23:04:31 2016
+Summary:
+	api                = POSIX
+	test filename      = testFile
+	access             = single-shared-file
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 1 (1 per node)
+	repetitions        = 1
+	xfersize           = 1 GiB
+	blocksize          = 2 GiB
+	aggregate filesize = 200 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     55.32      2097152    1048576    0.000127   3702       0.000016   3702       0   
+read      55.13      2097152    1048576    0.000014   3715       0.000022   3715       0   
+remove    -          -          -          -          -          -          6.06       0   
+
+Max Write: 55.32 MiB/sec (58.01 MB/sec)
+Max Read:  55.13 MiB/sec (57.81 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum
+write          55.32      55.32      55.32       0.00 3701.82093 0 1 1 1 0 0 1 0 0 100 2147483648 1073741824 214748364800 POSIX 0
+read           55.13      55.13      55.13       0.00 3715.01387 0 1 1 1 0 0 1 0 0 100 2147483648 1073741824 214748364800 POSIX 0
+
+Finished: Mon Apr  4 01:08:14 2016
