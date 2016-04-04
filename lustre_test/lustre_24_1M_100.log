@@ -1,0 +1,58 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+non-option argument: /mnt/lustre/
+Began: Sun Apr  3 21:27:07 2016
+Command line used: ior -s 100 -t 1M -b 2M /mnt/lustre/
+Machine: Linux fast5
+
+Test 0 started: Sun Apr  3 21:27:07 2016
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+Summary:
+	api                = POSIX
+	test filename      = testFile
+	access             = single-shared-file
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 24 (24 per node)
+	repetitions        = 1
+	xfersize           = 1 MiB
+	blocksize          = 2 MiB
+	aggregate filesize = 4.69 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     167.25     2048.00    1024.00    0.044289   28.68      28.46      28.70      0   
+read      8170       2048.00    1024.00    0.025507   0.587482   0.396499   0.587508   0   
+remove    -          -          -          -          -          -          2.93       0   
+
+Max Write: 167.25 MiB/sec (175.37 MB/sec)
+Max Read:  8170.11 MiB/sec (8566.98 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum
+write         167.25     167.25     167.25       0.00   28.70016 0 24 24 1 0 0 1 0 0 100 2097152 1048576 5033164800 POSIX 0
+read         8170.11    8170.11    8170.11       0.00    0.58751 0 24 24 1 0 0 1 0 0 100 2097152 1048576 5033164800 POSIX 0
+
+Finished: Sun Apr  3 21:28:28 2016

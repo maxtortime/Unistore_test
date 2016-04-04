@@ -1,0 +1,49 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+Began: Sun Apr  3 21:19:48 2016
+Command line used: ior -s 100 -t 1M -b 2M /mnt/lustre/
+Machine: Linux fast5
+
+Test 0 started: Sun Apr  3 21:19:48 2016
+Summary:
+	api                = POSIX
+	test filename      = testFile
+	access             = single-shared-file
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 15 (15 per node)
+	repetitions        = 1
+	xfersize           = 1 MiB
+	blocksize          = 2 MiB
+	aggregate filesize = 2.93 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     860.90     2048.00    1024.00    0.007956   3.48       3.28       3.48       0   
+read      10426      2048.00    1024.00    0.012174   0.287732   0.156816   0.287744   0   
+remove    -          -          -          -          -          -          0.000073   0   
+
+Max Write: 860.90 MiB/sec (902.72 MB/sec)
+Max Read:  10425.93 MiB/sec (10932.38 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum
+write         860.90     860.90     860.90       0.00    3.48471 0 15 15 1 0 0 1 0 0 100 2097152 1048576 3145728000 POSIX 0
+read        10425.93   10425.93   10425.93       0.00    0.28774 0 15 15 1 0 0 1 0 0 100 2097152 1048576 3145728000 POSIX 0
+
+Finished: Sun Apr  3 21:19:52 2016

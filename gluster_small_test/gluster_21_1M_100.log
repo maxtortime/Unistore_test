@@ -1,0 +1,55 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+Began: Sun Apr  3 22:18:45 2016
+Command line used: ior -s 100 -t 1M -b 2M /mnt/gluster/
+Machine: Linux fast5
+
+Test 0 started: Sun Apr  3 22:18:45 2016
+Summary:
+	api                = POSIX
+	test filename      = testFile
+	access             = single-shared-file
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 21 (21 per node)
+	repetitions        = 1
+	xfersize           = 1 MiB
+	blocksize          = 2 MiB
+	aggregate filesize = 4.10 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     182.25     2048.00    1024.00    0.025396   23.03      22.77      23.04      0   
+read      8008       2048.00    1024.00    0.019099   0.524475   0.301099   0.524488   0   
+remove    -          -          -          -          -          -          0.000195   0   
+
+Max Write: 182.25 MiB/sec (191.11 MB/sec)
+Max Read:  8007.81 MiB/sec (8396.80 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum
+write         182.25     182.25     182.25       0.00   23.04471 0 21 21 1 0 0 1 0 0 100 2097152 1048576 4404019200 POSIX 0
+read         8007.81    8007.81    8007.81       0.00    0.52449 0 21 21 1 0 0 1 0 0 100 2097152 1048576 4404019200 POSIX 0
+
+Finished: Sun Apr  3 22:19:46 2016

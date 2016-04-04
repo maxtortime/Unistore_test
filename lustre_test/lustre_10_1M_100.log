@@ -1,0 +1,44 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+Began: Sun Apr  3 21:18:18 2016
+Command line used: ior -s 100 -t 1M -b 2M /mnt/lustre/
+Machine: Linux fast5
+
+Test 0 started: Sun Apr  3 21:18:18 2016
+Summary:
+	api                = POSIX
+	test filename      = testFile
+	access             = single-shared-file
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 10 (10 per node)
+	repetitions        = 1
+	xfersize           = 1 MiB
+	blocksize          = 2 MiB
+	aggregate filesize = 1.95 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     1204.64    2048.00    1024.00    0.059317   1.61       1.28       1.66       0   
+read      7744       2048.00    1024.00    0.011062   0.258255   0.090134   0.258271   0   
+remove    -          -          -          -          -          -          0.000045   0   
+
+Max Write: 1204.64 MiB/sec (1263.15 MB/sec)
+Max Read:  7743.81 MiB/sec (8119.98 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum
+write        1204.64    1204.64    1204.64       0.00    1.66025 0 10 10 1 0 0 1 0 0 100 2097152 1048576 2097152000 POSIX 0
+read         7743.81    7743.81    7743.81       0.00    0.25827 0 10 10 1 0 0 1 0 0 100 2097152 1048576 2097152000 POSIX 0
+
+Finished: Sun Apr  3 21:18:20 2016

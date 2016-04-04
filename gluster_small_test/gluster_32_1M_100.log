@@ -1,0 +1,66 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+Began: Sun Apr  3 22:39:20 2016
+Command line used: ior -s 100 -t 1M -b 2M /mnt/gluster/
+Machine: Linux fast5
+
+Test 0 started: Sun Apr  3 22:39:20 2016
+Summary:
+	api                = POSIX
+	test filename      = testFile
+	access             = single-shared-file
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 32 (32 per node)
+	repetitions        = 1
+	xfersize           = 1 MiB
+	blocksize          = 2 MiB
+	aggregate filesize = 6.25 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     79.42      2048.00    1024.00    0.058014   80.57      80.16      80.58      0   
+read      7739       2048.00    1024.00    0.041642   0.827003   0.476554   0.827020   0   
+remove    -          -          -          -          -          -          4.97       0   
+
+Max Write: 79.42 MiB/sec (83.28 MB/sec)
+Max Read:  7738.63 MiB/sec (8114.54 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum
+write          79.42      79.42      79.42       0.00   80.58049 0 32 32 1 0 0 1 0 0 100 2097152 1048576 6710886400 POSIX 0
+read         7738.63    7738.63    7738.63       0.00    0.82702 0 32 32 1 0 0 1 0 0 100 2097152 1048576 6710886400 POSIX 0
+
+Finished: Sun Apr  3 22:41:58 2016

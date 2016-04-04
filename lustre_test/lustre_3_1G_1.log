@@ -1,0 +1,36 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+non-option argument: /mnt/lustre/
+non-option argument: /mnt/lustre/
+
+non-option argument: /mnt/lustre/
+Began: Mon Apr  4 01:11:44 2016
+Command line used: ior -s 100 -t 1G -b 2G /mnt/lustre/
+Machine: Linux fast5
+
+Test 0 started: Mon Apr  4 01:11:44 2016
+Summary:
+	api                = POSIX
+	test filename      = testFile
+	access             = single-shared-file
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 3 (3 per node)
+	repetitions        = 1
+	xfersize           = 1 GiB
+	blocksize          = 2 GiB
+	aggregate filesize = 600 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+ior ERROR: write() failed, errno 28, No space left on device (aiori-POSIX.c:236)
+WARNING: Task 0, partial write(), 857022464 of 1073741824 bytes at offset 483183820800
+ior ERROR: write() failed, errno 28, No space left on device (aiori-POSIX.c:236)
+ior ERROR: write() failed, errno 28, No space left on device (aiori-POSIX.c:236)
+--------------------------------------------------------------------------
+WARNING: A process refused to die despite all the efforts!
+This process may still be running and/or consuming resources.
+
+Host: fast5
+PID:  27814
+
+--------------------------------------------------------------------------

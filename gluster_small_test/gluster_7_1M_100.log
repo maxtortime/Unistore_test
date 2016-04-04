@@ -1,0 +1,41 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+Began: Sun Apr  3 22:12:02 2016
+Command line used: ior -s 100 -t 1M -b 2M /mnt/gluster/
+Machine: Linux fast5
+
+Test 0 started: Sun Apr  3 22:12:02 2016
+Summary:
+	api                = POSIX
+	test filename      = testFile
+	access             = single-shared-file
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 7 (7 per node)
+	repetitions        = 1
+	xfersize           = 1 MiB
+	blocksize          = 2 MiB
+	aggregate filesize = 1.37 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     1531.22    2048.00    1024.00    0.013588   0.901148   0.558731   0.914302   0   
+read      10250      2048.00    1024.00    0.000027   0.136575   0.055653   0.136590   0   
+remove    -          -          -          -          -          -          0.297793   0   
+
+Max Write: 1531.22 MiB/sec (1605.60 MB/sec)
+Max Read:  10249.65 MiB/sec (10747.54 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum
+write        1531.22    1531.22    1531.22       0.00    0.91430 0 7 7 1 0 0 1 0 0 100 2097152 1048576 1468006400 POSIX 0
+read        10249.65   10249.65   10249.65       0.00    0.13659 0 7 7 1 0 0 1 0 0 100 2097152 1048576 1468006400 POSIX 0
+
+Finished: Sun Apr  3 22:12:03 2016

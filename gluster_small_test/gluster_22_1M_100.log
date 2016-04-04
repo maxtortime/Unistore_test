@@ -1,0 +1,56 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+Began: Sun Apr  3 22:20:13 2016
+Command line used: ior -s 100 -t 1M -b 2M /mnt/gluster/
+Machine: Linux fast5
+
+Test 0 started: Sun Apr  3 22:20:13 2016
+Summary:
+	api                = POSIX
+	test filename      = testFile
+	access             = single-shared-file
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 22 (22 per node)
+	repetitions        = 1
+	xfersize           = 1 MiB
+	blocksize          = 2 MiB
+	aggregate filesize = 4.30 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     162.59     2048.00    1024.00    0.040496   27.05      26.73      27.06      0   
+read      7596       2048.00    1024.00    0.029070   0.579265   0.277092   0.579286   0   
+remove    -          -          -          -          -          -          35.53      0   
+
+Max Write: 162.59 MiB/sec (170.49 MB/sec)
+Max Read:  7595.56 MiB/sec (7964.52 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum
+write         162.59     162.59     162.59       0.00   27.06168 0 22 22 1 0 0 1 0 0 100 2097152 1048576 4613734400 POSIX 0
+read         7595.56    7595.56    7595.56       0.00    0.57929 0 22 22 1 0 0 1 0 0 100 2097152 1048576 4613734400 POSIX 0
+
+Finished: Sun Apr  3 22:21:16 2016
