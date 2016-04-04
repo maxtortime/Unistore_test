@@ -1,0 +1,50 @@
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+Began: Mon Apr  4 18:02:55 2016
+Command line used: ior -s 1 -t 1G -b 2G /mnt/gluster/
+Machine: Linux fast5
+
+Test 0 started: Mon Apr  4 18:02:55 2016
+Summary:
+	api                = POSIX
+	test filename      = testFile
+	access             = single-shared-file
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 16 (16 per node)
+	repetitions        = 1
+	xfersize           = 1 GiB
+	blocksize          = 2 GiB
+	aggregate filesize = 32 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     60.68      2097152    1048576    0.014908   539.99     476.36     539.99     0   
+read      17.82      2097152    1048576    0.028155   1838.69    352.85     1838.69    0   
+remove    -          -          -          -          -          -          2.80       0   
+
+Max Write: 60.68 MiB/sec (63.63 MB/sec)
+Max Read:  17.82 MiB/sec (18.69 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum
+write          60.68      60.68      60.68       0.00  539.98535 0 16 16 1 0 0 1 0 0 1 2147483648 1073741824 34359738368 POSIX 0
+read           17.82      17.82      17.82       0.00 1838.68565 0 16 16 1 0 0 1 0 0 1 2147483648 1073741824 34359738368 POSIX 0
+
+Finished: Mon Apr  4 18:42:40 2016

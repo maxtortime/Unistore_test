@@ -1,0 +1,45 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+non-option argument: /mnt/gluster/
+Began: Mon Apr  4 16:13:22 2016
+Command line used: ior -s 1 -t 1G -b 2G /mnt/gluster/
+Machine: Linux fast5
+
+Test 0 started: Mon Apr  4 16:13:22 2016
+Summary:
+	api                = POSIX
+	test filename      = testFile
+	access             = single-shared-file
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 11 (11 per node)
+	repetitions        = 1
+	xfersize           = 1 GiB
+	blocksize          = 2 GiB
+	aggregate filesize = 22 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     64.44      2097152    1048576    0.010451   349.58     345.61     349.58     0   
+read      44.23      2097152    1048576    0.015913   509.34     289.48     509.34     0   
+remove    -          -          -          -          -          -          0.000112   0   
+
+Max Write: 64.44 MiB/sec (67.57 MB/sec)
+Max Read:  44.23 MiB/sec (46.38 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum
+write          64.44      64.44      64.44       0.00  349.57885 0 11 11 1 0 0 1 0 0 1 2147483648 1073741824 23622320128 POSIX 0
+read           44.23      44.23      44.23       0.00  509.34421 0 11 11 1 0 0 1 0 0 1 2147483648 1073741824 23622320128 POSIX 0
+
+Finished: Mon Apr  4 16:27:42 2016
